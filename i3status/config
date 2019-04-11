@@ -1,0 +1,85 @@
+general {
+  output_format = "i3bar"
+  color_bad = "#f79439"
+	#color_good = "#00d5a7"
+  color_good = "#b64e4b"
+  #color_good = "#004e4b"
+	color_degraded = "#eb8038"
+	interval = 1
+	#separator = "&gt;"
+	#color_separator = "#ff0000"
+}
+
+order += "tztime local"
+order += "wireless wlp58s0"
+order += "cpu_temperature 0"
+order += "disk /"
+order += "volume master"
+order += "battery 0"
+
+wireless wlp58s0 {
+  format_up = " %quality %essid  %bitrate"
+  format_down = " "
+	separator = false
+	separator_block_width = 23
+	min_width = 524
+	align = "right"
+}
+
+battery 0 {
+  format = "%status %percentage %remaining"
+  integer_battery_capacity = "true"
+	last_full_capacity = "false"
+	hide_seconds = "true"
+  format_down = "No battery"
+  status_chr = ""
+  status_bat = ""
+  status_unk = "?"
+  status_full = ""
+  path = "/sys/class/power_supply/BAT%d/uevent"
+	threshold_type = "percentage"
+  low_threshold = 20
+	separator = false
+	separator_block_width = 20
+	min_width = 88
+	align = "center"
+}
+
+tztime local {
+	format = "%d %b %H:%M:%S"
+	separator = false
+	separator_block_width = 20
+	min_width = 200
+	align = "center"
+}
+
+cpu_temperature 0 {
+  format = " %degrees°C"
+  path = "/sys/devices/platform/coretemp.0/hwmon/*/temp1_input"
+	max_threshold = "60"
+	format_above_threshold = " %degrees°C"
+	separator = false
+	separator_block_width = 20
+	min_width = 40
+	align = "center"
+}
+
+volume master {
+  format = " %volume"
+  format_muted = " %volume"
+  device = "default"
+  mixer = "Master"
+  mixer_idx = 0
+	separator = false
+	separator_block_width = 20
+	min_width = 43
+	align = "center"
+}
+
+disk "/" {
+  format = " %avail"
+	separator = false
+	separator_block_width = 20
+	min_width = 68
+	align = "center"
+}

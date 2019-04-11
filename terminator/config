@@ -1,0 +1,45 @@
+[global_config]
+  geometry_hinting = True
+  title_hide_sizetext = True
+  title_inactive_fg_color = "#1e1e1e"
+  title_receive_bg_color = "#7587a6"
+  title_transmit_bg_color = "#bf3f3f"
+[keybindings]
+  move_tab_left = <Shift><Alt>Left
+  move_tab_right = <Shift><Alt>Right
+  rotate_ccw = <Shift><Alt>Left
+  rotate_cw = <Shift><Alt>Right
+  split_horiz = <Primary><Shift>o
+  split_vert = <Primary><Shift>e
+[layouts]
+  [[default]]
+    [[[child0]]]
+      fullscreen = False
+      last_active_term = 52cac796-d696-4c49-a718-773b2f4df496
+      last_active_window = True
+      maximised = False
+      order = 0
+      parent = ""
+      position = 354:141
+      size = 972, 591
+      title = sheep@archbook:~
+      type = Window
+    [[[terminal1]]]
+      order = 0
+      parent = child0
+      profile = default
+      type = Terminal
+      uuid = 52cac796-d696-4c49-a718-773b2f4df496
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#1e1e1e"
+    background_darkness = 0.85
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Fira Mono 11
+    foreground_color = "#a7a7a7"
+    palette = "#282a2e:#a54242:#8c9440:#de935f:#5f819d:#85678f:#5e8d87:#707880:#373b41:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#c5c8c6"
+    scrollback_infinite = True
+    scrollbar_position = hidden
+    use_system_font = False
